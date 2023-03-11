@@ -1,13 +1,13 @@
 // imports and such
 const fs = require('node:fs');
 const path = require('node:path');
-const { Client, GatewayIntentBits, Collection } = require('discord.js');
+const Discord = require('discord.js');
 const { token } = require('./config.json');
 
 // Create a new client instance
-const client = new Client({ intents: [GatewayIntentBits.Guilds] });
+const client = new Discord.Client({ intents: [Discord.GatewayIntentBits.Guilds] });
 
-client.commands = new Collection();
+client.commands = new Discord.Collection();
 
 const commandsPath = path.join(__dirname, 'commands');
 const eventsPath = path.join(__dirname, 'events');

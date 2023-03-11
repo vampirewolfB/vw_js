@@ -1,8 +1,9 @@
-const { Events } = require('discord.js');
+const Discord = require('discord.js');
+const client = require("path").join(__dirname, "../index.js"); 
 
 module.exports =
 {
-    name: Events.ClientReady,
+    name: Discord.Events.ClientReady,
     once: true,
     execute(client)
     {

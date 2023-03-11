@@ -1,8 +1,9 @@
-const { Events } = require('discord.js');
+const Discord = require('discord.js');
+const client = require("path").join(__dirname, "../index.js"); 
 
 module.exports = 
 {
-	name: Events.InteractionCreate,
+	name: Discord.Events.InteractionCreate,
 	async execute(interaction) {
 		if (!interaction.isChatInputCommand()) return;
 

@@ -1,7 +1,8 @@
-const { SlashCommandBuilder } = require('discord.js');
+const Discord = require('discord.js');
+const client = require("path").join(__dirname, "../index.js"); 
 
 module.exports = {
-	data: new SlashCommandBuilder()
+	data: new Discord.SlashCommandBuilder()
 		.setName('options-info')
 		.setDescription('Information about the options provided.')
 		.addStringOption(option => option.setName('input').setDescription('The input to echo back')),

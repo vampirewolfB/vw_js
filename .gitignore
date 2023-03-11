@@ -1,4 +1,5 @@
 node_modules
+commands_new
 .env
 config.json
 package.json
