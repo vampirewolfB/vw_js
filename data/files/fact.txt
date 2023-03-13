@@ -1,0 +1,44 @@
+﻿Size of a cell is 1 metre square					
+Space Arena was develop by Epic Owl, named Starship Battle				
+ClassBattle match opponent ±10 player level from you
+All ship blueprint (high&low lv, nonspecial&special) are ~357 credit sell value each in shop					
+When missile hit shield doesn't do area damage
+Small Steel Armor Mk2 & Small Ion Drive Mk2 only obtainable from Wing Special Offer
+Total module bonus affects main & support ship, but independent support ship total module bonus doesnt affect main ship
+Kahje (Khonarl support) have 12 speed, 2.5 turning
+Small Steel Armor Mk2 & Small Ion Drive Mk2 only obtainable from Wing Special Offer
+When Battle Arena Oppoent Rating gap > 45, win/lose wont change your rating
+Ship offline only have mass, health, reflect available, maintain last online momentum
+All damage +3%/s to prevent stalemates
+Opponents in the usual Arena mode are matched on the basis of criteria of number: ship class, range of levels, odds and rating. Such a system for selecting opponents allows for a better balance of the game.
+The Damage parameter of weapon modules is the amount of damage done per shot caused to a cell.
+Warp time calculation: Fixed number + (Ship cells sum / Sum of Warp Power) + A small random number.
+Using multiple Warp Drives increases the warp frequency. The number of cells affect warp frequency, a ship's total mass does not.
+In Gaussian War Shotgun, the number of pellet in the queue is 3, each pellet is 12 bullets, so 36 bullets are fired in one turn 
+If you hit two (or more) shields at the same time, only one of the shields will receive damage.
+For fleet arena farming experience mainly, there are few requirements needed: Every ally ship needs to be destroyed for more experience; should to destroy some enemy ships for extra experience; Low budget to maximize efficiency. So the most efficient experience farm: 1 most expensive ship + 8 Heavy Fighter
+To restart game progress use a new google account or contact support@herocraft.com or private message @Kos.
+You can only get special ships standard version Mk1 (Wing, PSS Sparrow, PSS Miran, PSS EL-K) by randomly apears special offers with the cost of real life money.
+Max galaxy slot is 40
+Oversized shield would catch enemy misfire shots, thus would be not recommend to do so.
+The greater Warp Force, the less time between jumps.
+Maximum Laser DPS = ((Laser Damage(100-Reflect)%)-Armour)Laser Duration÷(Laser Duration + 1/Fire Rate)
+How does afterburner works : The parameter “Turning boost” of the module is a coefficient. The coefficient is valid for the time specified in the parameter “Duration”. This coefficient is periodically multiplied by the base indicator of the speed of rotation of the ship.The effect of afterburner is triggered every 4.5 seconds. If several afterburners are installed, coefficients are added and affect the turning speed and the movementof the ship. However the intervals of the triggers do not change.
+The mass of the ship does not affect the jump time. However, the size of the ship does.
+Point Defense Turret has a radius of 19 cells, in 360°
+The ship does not have an intial mass, but an intial coefficient. These coefficient are multiplied by the mass modules installed on the ship. As a result of these operations, the speed of the ship is obtained (without engines).
+The Quantum turret shoots burst of 4 shots every 3 seconds.
+The Arsenal wall shoot 1 rocket one by one in a burst of 4.
+If you have a lack of energy, some module will be turned off (Armors will loose it's armor parameter, shields will not work, weapons will not shoot...)
+Several repair bay can focus one module.
+Repair bay focus a module until this module is fully repaired, think about upgrading the parameter "max modules" on your repair bay.
+If you win against a player with more rank point, you will gain between 7 to 12 rank point.
+If you win against a player with less rank point, you will only gain between 1 to 5 rank points.
+If you loose against a player with less rank point, you will only loose between 1 to 3 rank points.
+If you loose against a player with more rank point, you will loose between 5 to 8 rank points.
+The number of modules penetrated by weapons has no limit, until the penetrating damage reach 0.
+Bonus from the modules continue being valid after their destruction.
+The explosion damage is applied to every shields covering the impact area.
+Junk launcher does stop ballistics shot.
+The armor parameter does reduce every damage from every type of weapons.
+Anomalies events happen every 8 weeks, Grind Times follow annomalies with 1 week interval.

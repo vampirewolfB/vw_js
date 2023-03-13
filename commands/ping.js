@@ -3,9 +3,9 @@ const client = require("path").join(__dirname, "../index.js");
 
 module.exports = {
     data: new Discord.SlashCommandBuilder()
-        .setName('ping')
+        .setName('pingn')
         .setDescription('Replies with pong'),
     async execute(interaction) {
-        await interaction.reply(`Pong!🏓`);
+        interaction.reply(`Pong!🏓 ${Discord.client.websocket.ping}`);
     }
 }

@@ -5,11 +5,21 @@ const Discord = require('discord.js');
 const { token } = require('./config.json');
 
 // Create a new client instance
-const client = new Discord.Client({ intents: [Discord.GatewayIntentBits.Guilds] });
+const client = new Discord.Client({ 
+    intents: [Discord.GatewayIntentBits.GuildMembers,
+        Discord.GatewayIntentBits.Guilds,
+        Discord.GatewayIntentBits.GuildMessages,
+        Discord.GatewayIntentBits.DirectMessages,
+        Discord.GatewayIntentBits.MessageContent],
+        
+        partials:
+        [Discord.Partials.Channel]
+    });
+
 
 client.commands = new Discord.Collection();
 
-const commandsPath = path.join(__dirname, 'commands');
+const commandsPath = path.join(__dirname, 'commands_new');
 const eventsPath = path.join(__dirname, 'events');
 const commandFiles = fs.readdirSync(commandsPath).filter(file => file.endsWith('.js'));
 const eventFiles = fs.readdirSync(eventsPath).filter(file => file.endsWith('.js'));
