@@ -19,12 +19,23 @@ const client = new Discord.Client({
 
 client.commands = new Discord.Collection();
 
-const commandsPath = path.join(__dirname, 'commands_new');
+const subdir = ["fun", "meta", "moderation", "new_commands", "other", "space_arena"]
+const subdirs = subdir.values();
+
+//const commandsPath = path.join(__dirname, 'commands_new');
 const eventsPath = path.join(__dirname, 'events');
-const commandFiles = fs.readdirSync(commandsPath).filter(file => file.endsWith('.js'));
+//const commandFiles = fs.readdirSync(commandsPath).filter(file => file.endsWith('.js'));
 const eventFiles = fs.readdirSync(eventsPath).filter(file => file.endsWith('.js'));
 
-for (const file of commandFiles)
+for (const dir of subdirs) {
+    const commandFiles = fs.readdirSync(`./commands/${dir}`).filter(file => file.endsWith(".js"))
+    for (const file of commandFiles) {
+        const command = require(`./commands/${dir}/${file}`);
+        client.commands.set(command.data.name, command)
+    }
+}
+
+/*for (const file of commandFiles)
 {
     const filePath = path.join(commandsPath, file);
     const command = require(filePath);
@@ -36,7 +47,8 @@ for (const file of commandFiles)
     {
         console.log(`[WARNING] The command at ${filePath} is missing a required "data" or "execute" property`);
     }
-}
+}*/
+
 
 for (const file of eventFiles)
 {
