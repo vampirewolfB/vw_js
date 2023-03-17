@@ -5,8 +5,6 @@ const path = require('node:path');
 
 const commands = [];
 // Grab all the command files from the commands directory you created earlier
-//const commandsPath = path.join(__dirname, 'commands_new');
-//const commandFiles = fs.readdirSync(commandsPath).filter(file => file.endsWith('.js'));
 
 const subdir = ["fun", "meta", "moderation", "new_commands", "other", "space_arena"]
 const subdirs = subdir.values();
@@ -20,11 +18,6 @@ for (const dir of subdirs) {
         commands.push(command.data.toJSON());
     }
 }
-
-/*for (const file of commandFiles) {
-	const command = require(`./commands_new/${file}`);
-	commands.push(command.data.toJSON());
-}*/
 
 // Construct and prepare an instance of the REST module
 const rest = new REST({ version: '10' }).setToken(token);
