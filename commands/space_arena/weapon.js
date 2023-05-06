@@ -1,6 +1,6 @@
 const Discord = require('discord.js');
-const client = require("path").join(__dirname, "../index.js"); 
-const weap = require("path").join(__dirname, "../data/pictures/weap.png")
+const client = require("path").join(__dirname, "../../index.js"); 
+const weap = require("path").join(__dirname, "../../data/pictures/weap.png")
 
 module.exports =
 {

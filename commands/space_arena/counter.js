@@ -1,6 +1,6 @@
 const Discord = require('discord.js');
-const client = require("path").join(__dirname, "../index.js"); 
-const counter = require("path").join(__dirname, "../data/pictures/counter.png")
+const client = require("path").join(__dirname, "../../index.js"); 
+const counter = require("path").join(__dirname, "../../data/pictures/counter.png")
 
 module.exports =
 {

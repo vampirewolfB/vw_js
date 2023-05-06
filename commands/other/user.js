@@ -1,5 +1,5 @@
 const Discord = require('discord.js');
-const client = require("path").join(__dirname, "../index.js"); 
+const client = require("path").join(__dirname, "../../index.js"); 
 
 module.exports = {
 	data: new Discord.SlashCommandBuilder()

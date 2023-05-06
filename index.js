@@ -19,7 +19,7 @@ const client = new Discord.Client({
 
 client.commands = new Discord.Collection();
 
-const subdir = ["fun", "meta", "moderation", "new_commands", "other", "space_arena"]
+const subdir = ["fun", "botinfo", "moderation", "dominus", "other", "space_arena"]
 const subdirs = subdir.values();
 
 const eventsPath = path.join(__dirname, 'events');
