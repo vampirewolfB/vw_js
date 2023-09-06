@@ -3,7 +3,7 @@ const client = require("path").join(__dirname, "../index.js");
 
 module.exports = 
 {
-	name: Discord.Events.InteractionCreate,
+	name: "interactionCreate",
 	async execute(interaction) {
 		if (!interaction.isChatInputCommand()) return;
 

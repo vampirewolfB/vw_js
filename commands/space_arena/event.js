@@ -23,7 +23,7 @@ module.exports =
             description: `${answer}`
         }
 
-        interaction.reply({ content: 'Your answer has been past forward', ephemeral: true})
+        interaction.reply({ content: 'Your answer has been passed forward', ephemeral: true})
         answerChannel.send({ content: `From <@${interaction.user.id}>`, embeds: [eventEmbed]})
     }
 }

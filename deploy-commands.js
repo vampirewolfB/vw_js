@@ -9,7 +9,6 @@ const commands = [];
 const subdir = ["fun", "botinfo", "moderation", "other", "space_arena", "dominus"]
 const subdirs = subdir.values();
 
-
 // Grab the SlashCommandBuilder#toJSON() output of each command's data for deployment
 
 for (const dir of subdirs) {
@@ -32,6 +31,7 @@ const rest = new REST({ version: '10' }).setToken(token);
 		const data = await rest.put(
 			Routes.applicationGuildCommands(clientId, guildId),
 			{ body: commands },
+			
 		);
 
 		console.log(`Successfully reloaded ${data.length} application (/) commands.`);

@@ -10,11 +10,16 @@ const client = new Discord.Client({
         Discord.GatewayIntentBits.Guilds,
         Discord.GatewayIntentBits.GuildMessages,
         Discord.GatewayIntentBits.DirectMessages,
-        Discord.GatewayIntentBits.MessageContent],
+        Discord.GatewayIntentBits.GuildMessageReactions,
+        Discord.GatewayIntentBits.MessageContent
+    ],
         
-        partials:
-        [Discord.Partials.Channel]
-    });
+    partials: [
+        Discord.Partials.Message,
+        Discord.Partials.Channel,
+        Discord.Partials.Reaction
+    ]
+});
 
 
 client.commands = new Discord.Collection();
@@ -46,6 +51,8 @@ for (const file of eventFiles)
 		client.on(event.name, (...args) => event.execute(...args));
 	}
 }
+
+
 
 // Log in to Discord with client token
 client.login(token);

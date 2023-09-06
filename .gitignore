@@ -1,5 +1,6 @@
 node_modules
 commands/new_commands
+unfinished_temp
 .env
 config.json
 package.json
