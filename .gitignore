@@ -5,3 +5,8 @@ unfinished_temp
 config.json
 package.json
 package-lock.json
+data/files/anomalies.csv
+data/files/feedback.csv
+data/files/suggest.csv
+data/files/suggestL.csv
+data/files/suggestTest.txt
