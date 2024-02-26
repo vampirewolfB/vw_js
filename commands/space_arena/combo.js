@@ -1,6 +1,6 @@
 const Discord = require('discord.js');
 const client = require("path").join(__dirname, "../../index.js"); 
-const combo = require("path").join(__dirname, "../../data/pictures/combo.png")
+const { Combo } = require("../../CommandFunctions/Space_Arena/combo.js")
 
 module.exports =
 {
@@ -10,6 +10,6 @@ module.exports =
         .setDMPermission(false),
     async execute(interaction)
     {
-        interaction.reply({ files: [combo]})
+        interaction.reply(Combo())
     }
 }

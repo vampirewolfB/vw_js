@@ -1,4 +1,5 @@
 // imports and such
+const Sequelize = require("sequelize");
 const fs = require('node:fs');
 const path = require('node:path');
 const Discord = require('discord.js');
@@ -21,38 +22,41 @@ const client = new Discord.Client({
     ]
 });
 
-
 client.commands = new Discord.Collection();
 
-const subdir = ["fun", "botinfo", "moderation", "dominus", "other", "space_arena"]
-const subdirs = subdir.values();
+const commandDirectories = fs.readdirSync('./Commands', { withFileTypes: true })
+                             .filter(dirent => dirent.isDirectory())
+                             .map(dirent => dirent.name);
 
-const eventsPath = path.join(__dirname, 'events');
-const eventFiles = fs.readdirSync(eventsPath).filter(file => file.endsWith('.js'));
+for (const dir of commandDirectories) {
+    const commandFiles = fs.readdirSync(path.join('./Commands', dir))
+                           .filter(file => file.endsWith('.js'))
 
-for (const dir of subdirs) {
-    const commandFiles = fs.readdirSync(`./commands/${dir}`).filter(file => file.endsWith(".js"))
     for (const file of commandFiles) {
-        const command = require(`./commands/${dir}/${file}`);
+        const command = require(path.join(__dirname, 'Commands', dir, file));
         client.commands.set(command.data.name, command)
     }
 }
 
-for (const file of eventFiles)
-{
-	const filePath = path.join(eventsPath, file);
-	const event = require(filePath);
-	if (event.once)
-    {
-		client.once(event.name, (...args) => event.execute(...args));
-	}
-    else
-    {
-		client.on(event.name, (...args) => event.execute(...args));
-	}
-}
+const eventDirectories = fs.readdirSync('./Events', { withFileTypes: true})
+                           .filter(dirent => dirent.isDirectory())
+                           .map(direct => direct.name);
 
+for (const dir of eventDirectories) {
+  const eventFiles = fs.readdirSync(path.join('./Events', dir))
+                       .filter(file => file.endsWith('.js'))
 
+  for (const file of eventFiles){
+    const eventPath = path.join(__dirname, 'Events', dir, file);
+    const event = require(eventPath);
+    if (event.once) {
+      client.once(event.name, (...args) => event.execute(...args))
+    }
+    else {
+      client.on(event.name, (...args) => event.execute(...args));
+    };
+  };
+};
 
 // Log in to Discord with client token
 client.login(token);

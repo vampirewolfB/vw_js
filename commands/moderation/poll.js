@@ -1,5 +1,6 @@
 const Discord = require('discord.js');
 const client = require("path").join(__dirname, "../../index.js"); 
+const { Poll } = require("../../CommandFunctions/Moderation/poll.js")
 
 module.exports = {
 	data: new Discord.SlashCommandBuilder()
@@ -11,16 +12,10 @@ module.exports = {
             .setRequired(true))
         .setDMPermission(false),
 	async execute(interaction) {
-		const poll = interaction.options.getString('poll');
-
-        const pollEmbed = {
-            color: 0x0015CF,
-            title: `Poll:`,
-            description: `${poll}`
-        };
+		const pollInput = interaction.options.getString('poll');
 		
-        const message = await interaction.reply({embeds: [pollEmbed], fetchReply: true})
-        message.react("723603472720723968")
-        message.react("723603439623340032")
+        const message = await interaction.reply({embeds: [Poll(pollInput)], fetchReply: true});
+        message.react("723603472720723968");
+        message.react("723603439623340032");
 	},
 };

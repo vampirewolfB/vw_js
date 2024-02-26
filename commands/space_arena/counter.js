@@ -1,6 +1,6 @@
 const Discord = require('discord.js');
 const client = require("path").join(__dirname, "../../index.js"); 
-const counter = require("path").join(__dirname, "../../data/pictures/counter.png")
+const { Counter } = require("../../CommandFunctions/Space_Arena/counter.js")
 
 module.exports =
 {
@@ -10,6 +10,6 @@ module.exports =
         .setDMPermission(false),
     async execute(interaction)
     {
-        interaction.reply({ files: [counter]})
+        interaction.reply(Counter())
     }
 }

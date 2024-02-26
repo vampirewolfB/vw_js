@@ -1,6 +1,6 @@
 const Discord = require('discord.js');
 const client = require("path").join(__dirname, "../../index.js"); 
-const galaxy = require("path").join(__dirname, "../../data/pictures/galaxy.png")
+const { Galaxy } = require("../../CommandFunctions/Space_Arena/galaxy.js");
 
 module.exports =
 {
@@ -10,6 +10,6 @@ module.exports =
         .setDMPermission(false),
     async execute(interaction)
     {
-        interaction.reply({ files: [galaxy]})
+        interaction.reply(Galaxy());
     }
 }

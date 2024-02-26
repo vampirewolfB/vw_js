@@ -6,7 +6,7 @@ const path = require('node:path');
 const commands = [];
 // Grab all the command files from the commands directory you created earlier
 
-const subdir = ["fun", "botinfo", "moderation", "other", "space_arena", "dominus"]
+const subdir = ["fun", "botinfo", "moderation", "other", "space_arena", "dominus", "economy"]
 const subdirs = subdir.values();
 
 // Grab the SlashCommandBuilder#toJSON() output of each command's data for deployment

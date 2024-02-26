@@ -1,7 +1,7 @@
 const Discord = require('discord.js');
 const client = require("path").join(__dirname, "../../index.js"); 
+const { Event } = require("../../CommandFunctions/Space_Arena/event.js")
 
-client.guild
 module.exports =
 {
     data: new Discord.SlashCommandBuilder()
@@ -15,15 +15,8 @@ module.exports =
     async execute(interaction)
     {
         const answer = interaction.options.getString('answer');
-        const answerChannel = await interaction.client.channels.cache.get('702909452789219389')
 
-        const eventEmbed = {
-            color: 0xFF0000,
-            title: "Answer: ",
-            description: `${answer}`
-        }
-
-        interaction.reply({ content: 'Your answer has been passed forward', ephemeral: true})
-        answerChannel.send({ content: `From <@${interaction.user.id}>`, embeds: [eventEmbed]})
+        Event(interaction, null, answer)
     }
 }
+
